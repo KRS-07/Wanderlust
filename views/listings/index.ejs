@@ -1,0 +1,25 @@
+<%layout("/layout/boilerplate")%>
+<body class="p-4">
+  <h3 class="text-2xl font-semibold mb-6">All Listings</h3>
+  <!-- <form action="/listings/new" method="get">
+    <button class="bg-blue-500 text-white py-2 px-4 rounded">Create New Listing</button>
+  </form> -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 justify-center">
+    <% for (let listing of allListings) { %>
+      <a href="/listings/<%=listing.id%>" class="block transform transition-transform duration-300 hover:scale-105 group">
+        <div class="border-2 rounded-lg mb-8 mx-2 shadow-lg">
+          <div class="relative">
+            <img class="h-80 w-full object-cover rounded-t-lg transition duration-300 group-hover:opacity-50" src="<%= listing.image %>" alt="listing img">
+            <div class="absolute inset-0 bg-white opacity-0 transition duration-300 group-hover:opacity-30 rounded-t-lg"></div>
+          </div>
+          <div class="p-4">
+            <p class="text-lg font-medium">
+              <span class="font-bold"><%= listing.title %></span> <br>
+              <span>&#8377</span><%= listing.price.toLocaleString("en-IN") %>  
+            </p>
+          </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+</body>

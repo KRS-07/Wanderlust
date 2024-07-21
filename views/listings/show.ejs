@@ -1,0 +1,22 @@
+<% layout("/layout/boilerplate") %>
+<body >
+    <div class="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-lg my-10">
+        <h3 class="text-2xl font-semibold mb-6 text-gray-800">Listing Details</h3>
+        <div class="border-b pb-4">
+            <img src="<%= listing.image %>" alt="<%= listing.title %>" class="w-full h-64 object-cover rounded-lg mb-4">
+            <ul class="space-y-2 text-gray-700">
+                <li class="text-xl font-bold"><%= listing.title %></li>
+                <li class="text-base"><%= listing.description %></li>
+                <li class="text-lg font-semibold">&#8377 <%= listing.price.toLocaleString("en-IN") %></li>
+                <li class="text-base"><%= listing.location %></li>
+                <li class="text-base"><%= listing.country %></li>
+            </ul>
+        </div>
+        <div class="mt-6 flex justify-between">
+            <a href="/listings/<%= listing.id %>/edit" class="text-blue-600 hover:underline">Edit this Listing</a>
+            <form action="/listings/<%= listing.id %>?_method=DELETE" method="post">
+                <button type="submit" class="text-red-600 hover:underline">Delete</button>
+            </form>
+        </div>
+    </div>
+</body>

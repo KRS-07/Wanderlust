@@ -1,0 +1,36 @@
+.elems a{
+  padding: 0.2rem 1.2rem;
+  border: 1px solid #080d5c;
+  border-radius: 0.5rem; 
+}
+
+  /* Default styles for larger screens */
+   
+  
+  /* Styles for screens less than 768px */
+   
+
+/* @media screen and (min-width:768px) and (max-width:1023px) {
+  nav{
+    background-color: black !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100% ;
+    z-index: 1000;  
+    margin: 0;  
+    border-radius: 0;  
+  }
+  nav .container {
+    justify-content: space-between;
+    background-color: red;
+  }
+  .none {
+    display: none;
+  }
+} */
